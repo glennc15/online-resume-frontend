@@ -15,49 +15,22 @@
 
         <section class="resume_header">
           <div>
-            <h1>Glenn Crosby</h1>
+            <h1>{{ vm.data.name }}</h1>
 
             <div class="info-item">
               <span class="info-label">
                 <i class="fa fa-location-arrow"></i>
               </span>
-              <span class="info-text">Alvin, Texas</span>
+              <span class="info-text">{{ vm.data.location }}</span>
             </div>
 
-            <div class="info-item">
+            <!-- email, phone, LinkedIn, GitHub links -->
+            <div class="info-item" ng-repeat="linkData in vm.data.titleLinks">
               <span class="info-label">
-                <i class="fa fa-envelope"></i>
+                <i class="fa {{ linkData.icon }}"></i>
               </span>
               <span class="info-text">
-                <a class="phone-number" href="mailto:glenn@crosby.dev">glenn@crosby.dev</a>
-              </span>
-            </div>
-
-            <div class="info-item">
-              <span class="info-label">
-                <i class="fa fa-phone"></i>
-              </span>
-              <span class="info-text">
-                <a class="phone-number" href="tel:+12816944143">(281) 694-4143</a>
-              </span>
-            </div>
-
-            <div class="info-item">
-              <span class="info-label">
-                <i class="fa fa-linkedin"></i>
-              </span>
-              <span class="info-text">
-                <a class="phone-number"
-                  href="https://www.linkedin.com/in/glenncrosby">https://www.linkedin.com/in/glenncrosby</a>
-              </span>
-            </div>
-
-            <div class="info-item">
-              <span class="info-label">
-                <i class="fa fa-github"></i>
-              </span>
-              <span class="info-text">
-                <a class="phone-number" href="https://github.com/glennc15">https://github.com/glennc15</a>
+                <a class="phone-number" href="{{ linkData.link }}">{{ linkData.display }}</a>
               </span>
             </div>
 
@@ -75,21 +48,11 @@
 
             <div class="other">
               <div class="other-info">
-                <p>Dynamic and results-oriented professional with extensive experience in project management,
-                  commissioning,
-                  and technical leadership within the oil and gas industry. Proven track record of managing diverse
-                  teams,
-                  ensuring compliance with industry standards, and maintaining exceptional client relationships. Skilled
-                  in
-                  project planning, equipment installation, commissioning, and quality assurance. Proficient in
-                  programming
-                  languages such as Python and JavaScript, with expertise in industrial networking protocols and PLC
-                  hardware. Seeking to leverage strong technical acumen, problem-solving abilities, and a commitment to
-                  excellence in a challenging data engineering role.</p>
+                <p ng-repeat="paragraph in vm.data.professionalSummary">{{ paragraph }}</p>
               </div>
             </div>
-          </div>
 
+          </div>
         </section>
 
         <section class="resume__section">
@@ -102,79 +65,10 @@
 
             <div class="resume_columns skills-column-left">
 
-              <div class="extra">
-                <div class="skills-title">Date Engineering</div>
+              <div class="extra" ng-repeat="skill in vm.data.leftSkills">
+                <div class="skills-title">{{ skill.heading }}</div>
                 <div class="extra-info">
-                  <small>Apache Airflow · AWS · Terraform</small>
-                  <div class="extra-details">
-                    <!-- <div class="extra-details__progress" style="width:100%"></div> -->
-                  </div>
-                </div>
-              </div>
-
-              <div class="extra">
-                <div class="skills-title">Web Scraping</div>
-                <div class="extra-info">
-                  <small>Scrapy · Playwright · Requests · Bash</small>
-                  <div class="extra-details">
-                    <!-- <div class="extra-details__progress" style="width:100%"></div> -->
-                  </div>
-                </div>
-              </div>
-
-              <div class="extra">
-                <div class="skills-title">DevOps</div>
-                <div class="extra-info">
-                  <small>Docker · GitHub · CI/CD</small>
-                  <div class="extra-details">
-                    <!-- <div class="extra-details__progress" style="width:100%"></div> -->
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="extra">
-                <div class="skills-title">Web Development</div>
-                <div class="extra-info">
-                  <small>Angular · HTML · CSS</small>
-                  <div class="extra-details">
-                    <!-- <div class="extra-details__progress" style="width:100%"></div> -->
-                  </div>
-                </div>
-              </div>
-
-              <div class="extra">
-                <div class="skills-title">Database Systems</div>
-                <div class="extra-info">
-                  <small>MongoDB · PostgreSQL</small>
-                  <div class="extra-details">
-                    <!-- <div class="extra-details__progress" style="width:100%"></div> -->
-                  </div>
-                </div>
-              </div>
-
-              <div class="extra">
-                <div class="skills-title">Programming Languages</div>
-                <div class="extra-info">
-                  <small>Python · JavaScript</small>
-                  <div class="extra-details">
-                    <!-- <div class="extra-details__progress" style="width:100%"></div> -->
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="extra">
-                <div class="skills-title">Operating Systems</div>
-                <div class="extra-info">
-                  <small>Mac OS · GNU/Linux · Windows</small>
-
-
-                  <!-- <i class="fa fa-apple"></i> Mac OS ·
-                <i class="fa fa-linux"></i> GNU/Linux ·
-                <i class="fa fa-windows"></i> Windows</small> -->
-
-
+                  <small>{{ skill.skills.join(" &#x2E31; ") }}</small>
                   <div class="extra-details">
                     <!-- <div class="extra-details__progress" style="width:100%"></div> -->
                   </div>
@@ -187,31 +81,10 @@
 
             <div class="resume_columns skills-column-right">
 
-              <div class="extra">
-                <div class="skills-title">Industrial Programming</div>
+              <div class="extra" ng-repeat="skill in vm.data.rightSkills">
+                <div class="skills-title">{{ skill.heading }}</div>
                 <div class="extra-info">
-                  <small>SCL · STL · Ladder Logic</small>
-                  <div class="extra-details">
-                    <!-- <div class="extra-details__progress" style="width:100%"></div> -->
-                  </div>
-                </div>
-              </div>
-
-              <div class="extra">
-                <div class="skills-title">Industrial Networks</div>
-                <div class="extra-info">
-                  <small>Profibus DP · Modbus · Industrial Ethernet</small>
-                  <div class="extra-details">
-                    <!-- <div class="extra-details__progress" style="width:100%"></div> -->
-                  </div>
-                </div>
-              </div>
-
-              <div class="extra">
-                <div class="skills-title">Industrial Hardware</div>
-                <div class="extra-info">
-                  <small>Siement 300/400H · Allen Bradley PLC5/SLC ·
-                    Omron</small>
+                  <small>{{ skill.skills.join(" &#x2E31; ") }}</small>
                   <div class="extra-details">
                     <!-- <div class="extra-details__progress" style="width:100%"></div> -->
                   </div>
@@ -219,19 +92,13 @@
               </div>
 
             </div>
-
           </div>
-
-
       </div>
     </div>
-
-
-
-
-
-
   </div>
+
+
+
 
   <!-- page 2 -->
   <div class="page" page-size="A4">
@@ -244,72 +111,23 @@
             <h2>Professional Experience</h2>
           </div>
 
-          <div class="xp-item">
-            <div class="xp-job">Installation and Commissioning Manager
-              <span>@ National Oilwell Varco</span><br /><small>China/UAE</small>
-            </div>
-            <div class="xp-date">Jan 2010 – Sep 2019</div>
-            <div class="xp-detail">
-              <p>I oversaw complex projects related to the installation and commissioning of cutting-edge equipment in
-                the oil and gas industry. My responsibilities included project planning, team leadership, and ensuring
-                the successful integration of equipment in challenging operational environments, contributing to the
-                company's reputation for excellence.</p>
-            </div>
-          </div>
+          <div class="xp-item" ng-repeat="job in vm.data.experience">
 
+            <div class="xp-job">{{ job.title }}
+              <span>@ {{ job.company }}</span><br /><small>{{ job.location }}</small>
+            </div>
+            <div class="xp-date">{{ job.dates }}</div>
 
-          <div class="xp-item">
-            <div class="xp-job">Commissioning Engineer
-              <span>@ National Oilwell Varco</span><br /><small>China/Korea/Singapore/UAE</small>
-            </div>
-            <div class="xp-date">May 2000 – Jan 2010</div>
-            <div class="xp-detail">
-              <p>I specialized in overseeing the commissioning process for oil and gas equipment. My role emphasized a
-                commitment to safety, strong troubleshooting skills, and effective communication. I thrived in remote
-                and challenging work environments while maintaining meticulous documentation of critical processes.</p>
-            </div>
-          </div>
-
-          <div class="xp-item">
-            <div class="xp-job">Electrical Designer
-              <span>@ Champion Elevators</span><br /><small>Houston, TX</small>
-            </div>
-            <div class="xp-date">May 1999 – May 2000</div>
-            <div class="xp-detail">
+            <div class="xp-detail" ng-if="job.list">
               <ul>
-                <li>Produced detailed electrical schematics and panel assembly drawings, complete with comprehensive
-                  BOMs, using AutoCAD and Solid Edge.</li>
-                <li>Develop custom software for Omron and Allen Bradley PLCs, along with intuitive HMI interfaces,
-                  enhancing elevator system efficiency and functionality.</li>
+                <li ng-repeat="paragraph in job.paragraphs">{{ paragraph }}</li>
               </ul>
             </div>
-          </div>
 
-          <div class="xp-item">
-            <div class="xp-job">Control Technician
-              <span>@ Tejas Boiler Service</span><br /><small>Houston, TX</small>
+            <div class="xp-detail" ng-if="!job.list">
+              <p ng-repeat="paragraph in job.paragraphs">{{ paragraph }}</p>
             </div>
-            <div class="xp-date">Sep 1994 – May 1999</div>
-            <div class="xp-detail">
-              <ul>
-                <li>Integral member of a dynamic engineering team, actively involved in diverse engineering disciplines.
-                </li>
-                <li>Designed custom burner monitoring and boiler control software for Allen Bradley PLCs meeting
-                  stringent NFPA 8502 requirements.</li>
-              </ul>
-            </div>
-          </div>
 
-          <div class="xp-item">
-            <div class="xp-job">Electrician's Mate, Second Class
-              <span>@ United States Navy</span><br /><small>USS Sturgeon</small>
-            </div>
-            <div class="xp-date">Aug 1989 – Aug 1994</div>
-            <div class="xp-detail">
-              <p>As a US Navy Nuclear-Trained Electrician on a fast attack submarine, I held a critical role in ensuring
-                the safe and reliable operation of the ship's electrical systems, contributing to mission success and
-                crew safety in challenging and dynamic environments.</p>
-            </div>
           </div>
 
         </div>
@@ -325,25 +143,9 @@
           </div>
 
 
-          <div class="xp-item">
-            <div class="xp-job">AWS Cloud Practitioner Certified
-              <div class="xp-date">Mar 2023</div>
-            </div>
-          </div>
-
-
-          <div class="xp-item">
-            <div class="xp-job">Houston Community College
-              <span>@ Main Campus, Houston, TX</span><br />
-              <div class="xp-date">Jan 1995 – Jul 1998</div>
-            </div>
-          </div>
-
-
-          <div class="xp-item">
-            <div class="xp-job">Naval Nuclear Power School
-              <span>@ NTC Orlando, Fl</span><br />
-              <div class="xp-date">Jul 2000 – Dec 2000</div>
+          <div class="xp-item" ng-repeat="educationItem in vm.data.education">
+            <div class="xp-job">{{ educationItem.name }}
+              <div class="xp-date">{{ educationItem.dates }}</div>
             </div>
           </div>
 
@@ -352,51 +154,13 @@
 
 
     </div>
-
   </div>
 
 
   <!-- Page Counter -->
-
-  <!-- <div class="resume">
-    <section class="resume__section">
-      <div class="resume__content">
-
-        <div class="resume_columns footer-column-left">
-
-          <div class="resume_section-title">
-            <i class="fa fa-linkedin"></i>
-            <a href="https://www.linkedin.com/in/glenncrosby">//www.linkedin.com/in/glenncrosby</a>
-          </div>
-
-        </div>
-
-        <div class="resume_columns footer-column-right">
-
-          <div class="resume_section-title">
-            <i class="fa fa-github"></i>
-            <h3>Check out some of my projects on GitHub</h3>
-          </div>
-
-        </div>
-
-
-      </div>
-    </section>
-
-
-  </div> -->
-
   <div class="page-counter">
-    <h2>Your are visitor: 001</h2>
+    <h2>Your are visitor: {{ ("00000"+vm.data.visitors).slice(-5) }}</h2>
   </div>
-
-
-
-
-
-
-
 
 
 
