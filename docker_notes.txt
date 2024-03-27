@@ -1,0 +1,7 @@
+can start a local docer image to serve the webpage for local testing:
+
+docker run \
+--name nginx-test-server \
+-v /Users/glenn/Documents/ProgrammingStuff/OnlineResumeChallenge/online-resume-frontend/app:/usr/share/nginx/html:ro \
+-p 8081:80 \
+-d nginx
