@@ -165,4 +165,4 @@ def test_navy_education(page: Page):
 
 def test_visitors_counter(page: Page):
     page.goto(base_url)
-    expect(page.get_by_text("You are visitor: 000,637")).to_be_visible()
+    expect(page.get_by_text("You are visitor: 0,637")).to_be_visible()

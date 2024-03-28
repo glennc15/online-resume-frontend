@@ -156,7 +156,7 @@ function homeCtrl() {
 				dates: "Jul 1990 - Dec 1990",
 			},
 		],
-		visitors: 37,
+		visitors: 637,
 	};
 
 	// the home controller is not doing anything.  But leaving it as it might be used in the future.

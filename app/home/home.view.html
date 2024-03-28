@@ -159,7 +159,7 @@
 
   <!-- Page Counter -->
   <div class="page-counter">
-    <h2>Your are visitor: {{ ("00000"+vm.data.visitors).slice(-5) }}</h2>
+    <h2>You are visitor: {{ vm.data.visitors | formatVisitor }}</h2>
   </div>
 
 
