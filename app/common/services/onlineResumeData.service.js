@@ -4,6 +4,7 @@
         .module('onlineResume')
         .service('onlineResumeData', onlineResumeData);
 
+
     onlineResumeData.$inject = ["$http"];
     function onlineResumeData($http) {
 
@@ -147,7 +148,7 @@
 
                 education: [
                     {
-                        name: "AWS Cloud Practitioner Certified",
+                        name: "AWS Certified Cloud Practitioner",
                         dates: "Mar 2024",
                     },
                     {

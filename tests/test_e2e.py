@@ -148,7 +148,7 @@ def test_navy_experience(page: Page):
 
 def test_AWS_education(page: Page):
     page.goto(base_url)
-    expect(page.get_by_text("AWS Cloud Practitioner Certified")).to_be_visible()
+    expect(page.get_by_text("AWS Certified Cloud Practitioner")).to_be_visible()
     expect(page.get_by_text("Mar 2024")).to_be_visible()
 
 def test_HCC_education(page: Page):
