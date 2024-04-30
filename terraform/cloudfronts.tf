@@ -1,12 +1,14 @@
 resource "aws_cloudfront_distribution" "domain" {
   origin {
-    domain_name = aws_s3_bucket.domain.bucket_regional_domain_name
-    origin_id = aws_s3_bucket.domain.id
+    domain_name              = aws_s3_bucket.domain.bucket_regional_domain_name
+    origin_id                = aws_s3_bucket.domain.id
     origin_access_control_id = aws_cloudfront_origin_access_control.domain.id
   }
 
   enabled             = true
   default_root_object = "index.html"
+
+  aliases = ["glenn15.com"]
 
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD"]
@@ -35,9 +37,16 @@ resource "aws_cloudfront_distribution" "domain" {
     }
   }
 
+#   viewer_certificate {
+#     cloudfront_default_certificate = true
+#   }
+
   viewer_certificate {
-    cloudfront_default_certificate = true
+    acm_certificate_arn = aws_acm_certificate_validation.cert.certificate_arn
+    ssl_support_method  = "sni-only"
   }
+
+
 
 }
 

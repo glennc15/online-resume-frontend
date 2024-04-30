@@ -4,8 +4,8 @@ resource "aws_s3_bucket" "domain" {
 }
 
 resource "aws_s3_bucket_policy" "domain" {
-    bucket = aws_s3_bucket.domain.id
-    policy = <<EOF
+  bucket = aws_s3_bucket.domain.id
+  policy = <<EOF
     {
         "Version": "2012-10-17",
         "Statement": {
