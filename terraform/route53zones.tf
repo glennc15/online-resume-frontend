@@ -35,6 +35,19 @@ resource "aws_route53_record" "domain" {
   }
 }
 
+# Alias record for www.glenn15.com -> cloudfront redirect distribution
+resource "aws_route53_record" "redirect" {
+  zone_id = "Z05623773J60BNV4GEW5X"
+  name    = "www.glenn15.com"
+  type    = "A"
+
+  alias {
+    name                   = aws_cloudfront_distribution.redirect.domain_name
+    zone_id                = aws_cloudfront_distribution.redirect.hosted_zone_id
+    evaluate_target_health = false
+  }
+}
+
 
 
 # ACM Certificates:
