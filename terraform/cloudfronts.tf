@@ -59,9 +59,7 @@ resource "aws_cloudfront_origin_access_control" "domain" {
 # This cloudfront distribution is for www.glenn15.com redirect bucket:
 resource "aws_cloudfront_distribution" "redirect" {
   origin {
-    # domain_name = aws_s3_bucket.redirect.bucket_regional_domain_name
-    # origin_id = aws_s3_bucket.redirect.id
-    # domain_name = aws_s3_bucket.redirect.bucket_domain_name
+    # when using the bucket URL you have to specify "custom_origin_config" too:
     origin_id = aws_s3_bucket.redirect.id
     domain_name = aws_s3_bucket.redirect.website_endpoint
     custom_origin_config {
@@ -71,10 +69,6 @@ resource "aws_cloudfront_distribution" "redirect" {
       origin_ssl_protocols = [ "TLSv1.2" ]
 
     }
-    # origin_access_control_id = aws_cloudfront_origin_access_control.redirect.id
-    # domain_name              = aws_s3_bucket.domain.bucket_regional_domain_name
-    # origin_id                = aws_s3_bucket.domain.id
-    # origin_access_control_id = aws_cloudfront_origin_access_control.domain.id
   }
 
   enabled             = true
@@ -117,12 +111,4 @@ resource "aws_cloudfront_distribution" "redirect" {
     acm_certificate_arn = aws_acm_certificate_validation.cert.certificate_arn
     ssl_support_method  = "sni-only"
   }
-}
-
-resource "aws_cloudfront_origin_access_control" "redirect" {
-  name                              = "s3-redirect"
-  origin_access_control_origin_type = "s3"
-  signing_behavior                  = "always"
-  signing_protocol                  = "sigv4"
-
 }

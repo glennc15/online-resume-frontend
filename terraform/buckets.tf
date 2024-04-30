@@ -40,25 +40,4 @@ resource "aws_s3_bucket_website_configuration" "redirect" {
 
 }
 
-resource "aws_s3_bucket_policy" "redirect" {
-  bucket = aws_s3_bucket.redirect.id
-  policy = <<EOF
-    {
-        "Version": "2012-10-17",
-        "Statement": {
-            "Sid": "AllowCloudFrontServicePrincipalReadOnly",
-            "Effect": "Allow",
-            "Principal": {
-                "Service": "cloudfront.amazonaws.com"
-            },
-            "Action": "s3:GetObject",
-            "Resource": "${aws_s3_bucket.redirect.arn}/*",
-            "Condition": {
-                "StringEquals": {
-                    "AWS:SourceArn": "${aws_cloudfront_distribution.redirect.arn}"
-                }
-            }
-        }
-    }
-    EOF
-}
+
