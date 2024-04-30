@@ -13,3 +13,17 @@ output "cloudfront_domain_name" {
   description = "The Cloudfront domain name"
   value       = aws_cloudfront_distribution.domain.domain_name
 }
+
+
+output "cloudfront_redirect_name" {
+  description = "The Cloudfront redirect name"
+  value = aws_cloudfront_distribution.redirect.domain_name
+}
+
+output "redirect_bucket_name" {
+  value = aws_s3_bucket.redirect.website_endpoint
+}
+
+output "redirect_bucket_website_config" {
+  value = aws_s3_bucket_website_configuration.redirect.website_domain
+}
