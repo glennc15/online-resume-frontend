@@ -1,6 +1,0 @@
-# content of pytest.ini
-[pytest]
-# Run firefox with UI
-; addopts = --headed --browser firefox
-
-base-url = http://localhost:8081/

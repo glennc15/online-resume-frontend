@@ -25,7 +25,6 @@ resource "aws_cloudfront_distribution" "domain" {
     }
 
     viewer_protocol_policy = "redirect-to-https"
-    # viewer_protocol_policy = "https-only"
     min_ttl     = 0
     default_ttl = 3600
     max_ttl     = 86400
@@ -37,10 +36,6 @@ resource "aws_cloudfront_distribution" "domain" {
       locations        = ["US", "CA", "GB", "DE"]
     }
   }
-
-#   viewer_certificate {
-#     cloudfront_default_certificate = true
-#   }
 
   viewer_certificate {
     acm_certificate_arn = aws_acm_certificate_validation.cert.certificate_arn
@@ -72,7 +67,6 @@ resource "aws_cloudfront_distribution" "redirect" {
   }
 
   enabled             = true
-  default_root_object = "index.html"
 
   aliases = ["www.glenn15.com"]
 
@@ -90,7 +84,6 @@ resource "aws_cloudfront_distribution" "redirect" {
     }
 
     viewer_protocol_policy = "redirect-to-https"
-    # viewer_protocol_policy = "https-only"
     min_ttl     = 0
     default_ttl = 3600
     max_ttl     = 86400
@@ -102,10 +95,6 @@ resource "aws_cloudfront_distribution" "redirect" {
       locations        = ["US", "CA", "GB", "DE"]
     }
   }
-
-#   viewer_certificate {
-#     cloudfront_default_certificate = true
-#   }
 
   viewer_certificate {
     acm_certificate_arn = aws_acm_certificate_validation.cert.certificate_arn
