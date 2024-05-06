@@ -1,6 +1,6 @@
 The AWS Online Resume Challenge
 ===============================
-This is my front end solution for the AWS Online Resume Challenge. My Online resume is build using AWS serverless services and can be viewed here <https://glenn15.com>.  The Online Resume Challenge was proposed by xxx.
+This is my front end solution for the AWS Online Resume Challenge. The Online Resume Challenge was proposed by Forrest Brazeal. The challenge basically consists of building a dynamic website with your resume data as content using a cloud service provider. For much more indepth details on the cloud resume challenge please check out Forrest's [site](https://forrestbrazeal.com/2020/04/23/the-cloud-resume-challenge/). My Online resume is build using AWS and can be viewed here <https://glenn15.com>.
 
 Description
 -----------
@@ -9,7 +9,7 @@ This is an overview of my AWS architecture:
 ![AWS Online Resume Architecture Diagram](https://github.com/glennc15/online-resume-frontend/blob/main/diagrams/OnlineResumeArchitecture.drawio.svg "AWS architecture drawing")
 
 The project works as follows:
-1. A user enters https://glenn15.com into their web browser or phone.
+1. A user enters "https://glenn15.com" into their web browser or phone.
 2. The web browser makes a request to https://glenn15.com. This request is routed to a DNS resolver, DNS root name server, and TLD name server before finally making it's way to AWS Route53.
 3. AWS Route53 returns the IP address of the CloudFront CDN to the DNS, which passes the IP address back to the users web browser. Now the web brower has the IP address and can get down to business!
 4. The web browser now make a request to the AWD CloudFront CDN using the IP address.
