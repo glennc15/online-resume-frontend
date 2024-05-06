@@ -17,15 +17,3 @@ variable "site_domain" {
   default = "glenn15.com"
 }
 
-# variable "lambda_memory" {
-#   default = "128"
-# }
-# variable "lambda_runtime" {
-#   default = "python3.9"
-# }
-# variable "lambda_timeout" {
-#   default = "100"
-# }
-# variable "lambda_tracing_config" {
-#   default = "Active"
-# }

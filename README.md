@@ -6,6 +6,7 @@ Description
 -----------
 
 This is an overview of my AWS architecture:
+
 ![AWS Online Resume Architecture Diagram](https://github.com/glennc15/online-resume-frontend/blob/main/diagrams/OnlineResumeArchitecture.drawio.svg "AWS architecture drawing")
 
 The project works as follows:
@@ -48,5 +49,5 @@ Technologies Used
 Achnowledgments
 ---------------
 * [Forrest Brazeal](https://forrestbrazeal.com/)
-* The AWS documentation team. The developer guides are very well written and there is no way I could not have completed this project without them!
+* The AWS documentation team. The developer guides are very well written and there is no way I could not have completed this project without them.
 
