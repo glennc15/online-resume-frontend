@@ -6,7 +6,7 @@ Description
 -----------
 
 This is an overview of my AWS architecture:
-![alt text](https://github.com/glennc15/online-resume-frontend/diagrams/OnlineResumeArchitecture.drawio.svg "AWS architecture drawing")
+![AWS Online Resume Architecture Diagram](https://github.com/glennc15/online-resume-frontend/blob/main/diagrams/OnlineResumeArchitecture.drawio.svg "AWS architecture drawing")
 
 The project works as follows:
 1. A user enters https://glenn15.com into their web browser or phone.
