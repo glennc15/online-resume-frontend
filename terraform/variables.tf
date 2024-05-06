@@ -17,3 +17,7 @@ variable "site_domain" {
   default = "glenn15.com"
 }
 
+variable "route53_zone_id" {
+
+}
+

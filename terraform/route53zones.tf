@@ -24,7 +24,7 @@ resource "aws_route53_record" "glenn15" {
 
 # Alias record for glenn15.com -> cloudfront site distribution
 resource "aws_route53_record" "domain" {
-  zone_id = "Z05623773J60BNV4GEW5X"
+  zone_id = var.route53_zone_id
   name    = "glenn15.com"
   type    = "A"
 
@@ -37,7 +37,7 @@ resource "aws_route53_record" "domain" {
 
 # Alias record for www.glenn15.com -> cloudfront redirect distribution
 resource "aws_route53_record" "redirect" {
-  zone_id = "Z05623773J60BNV4GEW5X"
+  zone_id = var.route53_zone_id
   name    = "www.glenn15.com"
   type    = "A"
 
