@@ -7,6 +7,10 @@ Description
 
 This is an overview of my AWS architecture:
 
+<p align="center">
+  <img src="https://github.com/glennc15/online-resume-frontend/blob/main/diagrams/OnlineResumeArchitecture.drawio.svg" alt="AWS architecture drawing"/>
+</p>
+
 ![AWS Online Resume Architecture Diagram](https://github.com/glennc15/online-resume-frontend/blob/main/diagrams/OnlineResumeArchitecture.drawio.svg "AWS architecture drawing")
 
 The project works as follows:
