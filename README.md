@@ -11,7 +11,6 @@ This is an overview of my AWS architecture:
   <img src="https://github.com/glennc15/online-resume-frontend/blob/main/diagrams/OnlineResumeArchitecture.drawio.svg" alt="AWS architecture drawing"/>
 </p>
 
-![AWS Online Resume Architecture Diagram](https://github.com/glennc15/online-resume-frontend/blob/main/diagrams/OnlineResumeArchitecture.drawio.svg "AWS architecture drawing")
 
 The project works as follows:
 1. A user enters glenn15.com into their web browser or phone.
