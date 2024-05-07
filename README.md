@@ -46,8 +46,8 @@ Technologies Used
     * AngularJS
 * CI/CD:
     * GitHub Actions
-    * Pytest with Playwright for testing the frontend.
-    * Pytest with Requests for testing the backend.
+    * Pytest with Playwright for frontend testing.
+    * Pytest with Requests for backend testing.
 
 Achnowledgments
 ---------------
