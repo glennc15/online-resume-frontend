@@ -1,0 +1,17 @@
+name: glennc15-pytests-action
+run-name: glennc15 pytests action
+on: [push]
+jobs:
+  pytests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+      - run: pip install -r requirements.txt
+      - run: playwright install
+      - run: URL=https://glenn15.com python -m pytest tests
+      - run: URL=http://glenn15.com python -m pytest tests
+      - run: URL=https://www.glenn15.com python -m pytest tests
+      - run: URL=http://www.glenn15.com python -m pytest tests
