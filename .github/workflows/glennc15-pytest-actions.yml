@@ -18,7 +18,8 @@ jobs:
 
       - run: pip install -r requirements.txt
       - run: playwright install
-      - run: terraform init -backend-config="access_key=$AWS_ACCESS_KEY_ID" -backend-config="secret_key=$AWS_SECRET_ACCESS_KEY"
+      - run: cd terraform && terraform init -backend-config="access_key=$AWS_ACCESS_KEY_ID" -backend-config="secret_key=$AWS_SECRET_ACCESS_KEY"
+      - run: cd ..
       - run: python build/project_build.py
       - run: URL=https://glenn15.com python -m pytest tests
       - run: URL=http://glenn15.com python -m pytest tests
