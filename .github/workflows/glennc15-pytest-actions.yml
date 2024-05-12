@@ -1,6 +1,11 @@
 name: glennc15-pytests-action
 run-name: glennc15 pytests action
-on: [push]
+on:
+  push:
+    branches:
+      - main
+      - 'terraform/**'
+      - 'tests/**'
 
 env:
  AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
