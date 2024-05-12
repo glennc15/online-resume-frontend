@@ -102,7 +102,6 @@ class BuildProject(object):
             if "lib" not in path:
                 for this_file in source_files:
                     if this_file in files:
-                        print(f"this_file = {this_file}\n")
 
                         partial_path = path[len(source):]
                         dest_path = os.path.join(dest, *partial_path.split("/"))

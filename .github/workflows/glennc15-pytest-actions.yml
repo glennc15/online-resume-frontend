@@ -11,6 +11,7 @@ jobs:
           python-version: '3.9'
       - run: pip install -r requirements.txt
       - run: playwright install
+      - run: python build/project_build.py
       - run: URL=https://glenn15.com python -m pytest tests
       - run: URL=http://glenn15.com python -m pytest tests
       - run: URL=https://www.glenn15.com python -m pytest tests
