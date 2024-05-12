@@ -2,10 +2,6 @@ name: glennc15-pytests-action
 run-name: glennc15 pytests action
 on: [push]
 
-env:
- AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
- AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_KEY }}
-
 jobs:
   pytests:
     runs-on: ubuntu-latest
@@ -18,7 +14,7 @@ jobs:
 
       - run: pip install -r requirements.txt
       - run: playwright install
-      - run: cd terraform && terraform init -backend-config="access_key=$AWS_ACCESS_KEY_ID" -backend-config="secret_key=$AWS_SECRET_ACCESS_KEY"
+      - run: cd terraform && terraform init -backend-config="access_key=$ACCESS_KEY" -backend-config="secret_key=$SECRET_KEY"
       - run: cd ..
       - run: python build/project_build.py
       - run: URL=https://glenn15.com python -m pytest tests
