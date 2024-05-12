@@ -34,10 +34,6 @@ def test_email_link(page: Page, config):
     page.goto(config.get('URL'))
     expect(page.get_by_role("link", name="gcrosby15@gmail.com")).to_be_visible()
 
-def test_email_link(page: Page, config):
-    page.goto(config.get('URL'))
-    expect(page.get_by_role("link", name="glenn@glenn.dev")).to_be_visible()
-
 def test_phone_link(page: Page, config):
     page.goto(config.get('URL'))
     expect(page.get_by_role("link", name="+1 (281) 694-4143")).to_be_visible()
