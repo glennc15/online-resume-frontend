@@ -5,3 +5,30 @@ docker run \
 -v /Users/glenn/Documents/ProgrammingStuff/OnlineResumeChallenge/front-end-sb/dist:/usr/share/nginx/html:ro \
 -p 8081:80 \
 -d nginx
+
+
+docker run \
+--name nginx-test-server \
+-v /Users/glenn/Documents/ProgrammingStuff/OnlineResumeChallenge/online-resume-frontend/build/dist:/usr/share/nginx/html:ro \
+-p 8081:80 \
+-d nginx
+
+var prtContent = document.getElementById("page1");
+var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+WinPrint.document.write('<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+WinPrint.document.write('<link rel=stylesheet href=/static/stylesheets/styles.css>');
+WinPrint.document.write(prtContent.innerHTML);
+
+WinPrint.document.close();
+WinPrint.focus();
+WinPrint.print();
+WinPrint.close();
+
+WinPrint.document.write('<link rel=stylesheet href=/static/stylesheets/styles.css>');
+WinPrint.document.write(prtContent2.innerHTML);
+
+
+var prtContent = document.getElementById("page1");
+var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+WinPrint.document.write('<link rel=stylesheet href=/static/stylesheets/styles.css>');
+WinPrint.document.write(prtContent.innerHTML);
