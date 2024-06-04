@@ -81,7 +81,7 @@ def test_programming_languages_skills(page: Page, config):
 
     # have to use an xpath locator because "Programming Languages" is used in several
     # differenct places. Without xpath causes a strict mode error.
-    expect(page.locator("xpath=//section[3]/div//div[2]//div[6]//div[1][text()='Programming Languages']")).to_be_visible()
+    expect(page.locator("xpath=//section[3]/div//div[3]//div[3]//div[1][text()='Programming Languages']")).to_be_visible()
     # expect(page.get_by_text("Programming Languages")).to_be_visible()
 
     expect(page.get_by_text("Python ⸱ JavaScript")).to_be_visible()
@@ -106,6 +106,17 @@ def test_industrial_hardware_skills(page: Page, config):
     expect(page.get_by_text("Industrial Hardware")).to_be_visible()
     expect(page.get_by_text("Siement 300/400H ⸱ Allen Bradley PLC5/SLC ⸱ Omron")).to_be_visible()
 
+def test_data_engineer_experience(page: Page, config):
+    page.goto(config.get('URL'))
+    expect(page.get_by_text("Data Engineer @ Self-Employed")).to_be_visible()
+
+    expect(page.locator("xpath=/html/body/div/div[2]/div/section[1]/div/div[2]/div[1]/small[text()='Houston, TX']")).to_be_visible()
+    # expect(page.get_by_text("Houston, TX")).to_be_visible()
+
+    expect(page.get_by_text("Jan 2020 - Present")).to_be_visible()
+    expect(page.get_by_text("Responsible for developing and maintaining Python scripts and web scrapers for financial data extraction, processing, and storage, with a strong emphasis on Test Driven Development (TDD) methodology. Experienced in managing MongoDB databases, including building and maintaining local servers.")).to_be_visible()
+
+
 def test_commissioning_manager_experience(page: Page, config):
     page.goto(config.get('URL'))
     expect(page.get_by_text("Installation and Commissioning Manager @ National Oilwell Varco")).to_be_visible()
@@ -129,7 +140,7 @@ def test_electrical_designer_experience(page: Page, config):
 
     # have to use an xpath locator because "Houston, TX" is used in several
     # differenct places. Without xpath causes a strict mode error.
-    expect(page.locator("xpath=//div[4]//div[1]//small[text()='Houston, TX']")).to_be_visible()
+    expect(page.locator("xpath=//div[5]//div[1]//small[text()='Houston, TX']")).to_be_visible()
     # expect(page.get_by_text("Houston, TX")).to_be_visible()
 
     expect(page.get_by_text("May 1999 - May 2000")).to_be_visible()
