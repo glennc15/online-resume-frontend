@@ -40,7 +40,7 @@ def test_phone_link(page: Page, config):
 
 def test_linkedin_link(page: Page, config):
     page.goto(config.get('URL'))
-    expect(page.get_by_role("link", name="https://www.linkedin.com/in/glenncrosby")).to_be_visible()
+    expect(page.get_by_role("link", name="in/glenncrosby")).to_be_visible()
 
 def test_gethub_link(page: Page, config):
     page.goto(config.get('URL'))
