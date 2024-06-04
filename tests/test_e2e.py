@@ -104,7 +104,7 @@ def test_industrial_networks_skills(page: Page, config):
 def test_industrial_hardware_skills(page: Page, config):
     page.goto(config.get('URL'))
     expect(page.get_by_text("Industrial Hardware")).to_be_visible()
-    expect(page.get_by_text("Siement 300/400H ⸱ Allen Bradley PLC5/SLC ⸱ Omron")).to_be_visible()
+    expect(page.get_by_text("Siemens 300/400H ⸱ Allen Bradley PLC5/SLC ⸱ Omron")).to_be_visible()
 
 def test_data_engineer_experience(page: Page, config):
     page.goto(config.get('URL'))
