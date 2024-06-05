@@ -1,27 +1,102 @@
 import pytest
 import os
 import re
+import subprocess
+
 from playwright.sync_api import Page, expect
 from pytest_docker_tools import fetch, container
 
 # base_url = "http://localhost:8081"
 
+# subprocess.run(["python", "build/project_build.py", "-k"])
 
-# @pytest.fixture(scope="module")
-# def docker_container():
+# nginx_image = fetch(
+#     repository="nginx:alpine"
+# )
+
+# html_path = os.path.join(os.path.dirname(__file__), "build", "dist")
+# html_path = "/Users/glenn/Documents/ProgrammingStuff/OnlineResumeChallenge/online-resume-frontend/build/dist"
+# print(f"html_path = {html_path}")
+
+# nginx_container = container(
+#     scope="session",
+#     image="{nginx_image.id}",
+#     ports={'80/tcp':None},
+#     volumes={
+#         html_path: {
+#             "bind": "/usr/share/nginx/html:ro"
+#         }
+#     }
+# )
+
+# def test_call_fixture(nginx_container):
+#     print(nginx_container)
+#     print(f"nginx_container.ports = {nginx_container.ports['80/tcp'][0]}")
+
+
+# nginx_container = container(
+#     scope='session',
+#     image="{nginx_image.id}",
+#     ports={8081: 80},
+#     # volumes={"/usr/share/nginx/html:ro":"/Users/glenn/Documents/ProgrammingStuff/OnlineResumeChallenge/online-resume-frontend/build/dist"}
+#     volumes={"/Users/glenn/Documents/ProgrammingStuff/OnlineResumeChallenge/online-resume-frontend/build/dist": "/usr/share/nginx/html:ro"}
+
+# )
+
+
+# @pytest.fixture(scope="session")
+# def run_docker_container(container):
+
+#     # nginx_image = fetch(
+#     #     repository="nginx"
+#     # )
+
+#     # print(f"nginx_image.id = {nginx_image.id}")
+
+#     # nginx_container = container(
+#     #     scope='session',
+#     #     image="{nginx_image.id}",
+#     #     # ports={80: None},
+#     #     # volumes={"/usr/share/nginx/html:ro":"/Users/glenn/Documents/ProgrammingStuff/OnlineResumeChallenge/online-resume-frontend/build/dist"}
+#     #     # volumes={"/Users/glenn/Documents/ProgrammingStuff/OnlineResumeChallenge/online-resume-frontend/build/dist": "/usr/share/nginx/html:ro"}
+
+#     # )
+
+#     # print(f"nginx_container.ports[80] = {nginx_container.ports[80]}")
+
+
 #     # start a nginx docker container is testing locally
 
 #     url = os.environ.get('URL')
 
 #     if url is None:
-#         nginx_image = fetch(
-#             repository="nginx"
-#         )
 
-#         nginx_container = container(
-#             image="{nginx_image.id}",
-#             ports={}
-#         )
+#         # build the distribution directory:
+#         subprocess.run(["python", "build/project_build.py", "-k"])
+
+
+
+
+#         # start and nginx docker container:
+
+#         # nginx_image = fetch(
+#         #     repository="nginx"
+#         # )
+
+#         # nginx_container = container(
+#         #     scope="session",
+#         #     image="{nginx_image.id}",
+#         #     ports={8081: 80},
+#         #     # volumes={"/usr/share/nginx/html:ro":"/Users/glenn/Documents/ProgrammingStuff/OnlineResumeChallenge/online-resume-frontend/build/dist"}
+#         #     volumes={"/Users/glenn/Documents/ProgrammingStuff/OnlineResumeChallenge/online-resume-frontend/build/dist": "/usr/share/nginx/html:ro"}
+
+#         # )
+
+#         yield
+
+#         # clean up:
+#         subprocess.run(["python", "build/project_build.py", "-d"])
+
 
 
 
