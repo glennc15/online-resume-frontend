@@ -58,7 +58,8 @@ def test_data_eng_skills(page: Page, config):
 
 def test_web_scraping_skills(page: Page, config):
     page.goto(config.get('URL'))
-    expect(page.get_by_text("Web Scraping")).to_be_visible()
+    expect(page.locator("//*[@id='page1']/div/div/section[3]/div/div[3]/div[1]/div[1][text()='Web Scraping']")).to_be_visible()
+    # expect(page.get_by_text("Web Scraping")).to_be_visible()
     expect(page.get_by_text("Scrapy ⸱ Playwright ⸱ Requests ⸱ Bash")).to_be_visible()
 
 def test_devops_skills(page: Page, config):
