@@ -65,7 +65,7 @@ def test_web_scraping_skills(page: Page, config):
 def test_devops_skills(page: Page, config):
     page.goto(config.get('URL'))
     expect(page.get_by_text("DevOps")).to_be_visible()
-    expect(page.get_by_text("Docker ⸱ GitHub ⸱ CI/CD")).to_be_visible()
+    expect(page.get_by_text("Docker ⸱ GitHub Actions ⸱ CI/CD")).to_be_visible()
 
 def test_web_development_skills(page: Page, config):
     page.goto(config.get('URL'))
