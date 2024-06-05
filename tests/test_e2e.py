@@ -2,9 +2,30 @@ import pytest
 import os
 import re
 from playwright.sync_api import Page, expect
-
+from pytest_docker_tools import fetch, container
 
 # base_url = "http://localhost:8081"
+
+
+# @pytest.fixture(scope="module")
+# def docker_container():
+#     # start a nginx docker container is testing locally
+
+#     url = os.environ.get('URL')
+
+#     if url is None:
+#         nginx_image = fetch(
+#             repository="nginx"
+#         )
+
+#         nginx_container = container(
+#             image="{nginx_image.id}",
+#             ports={}
+#         )
+
+
+
+
 
 @pytest.fixture
 def config():
