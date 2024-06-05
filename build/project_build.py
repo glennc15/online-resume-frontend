@@ -33,6 +33,7 @@ import shutil
 import re
 import subprocess
 import boto3
+import sys
 
 from jsmin import jsmin
 
@@ -63,9 +64,16 @@ class BuildProject(object):
             "onlineResumeData.service.js",
         ]
 
+    # @property
+    # def dist_path(self):
+    #     return self.dist_path
+
+    # @dist_path.setter
+    # def dist_path(self, value):
+    #     self.dist_path = value
 
 
-    def build_project(self):
+    def build_project(self, delete_distribution=True):
         # build the dist folder:
         self.create_dir(
             source=self.source_path,
@@ -90,7 +98,8 @@ class BuildProject(object):
             source=self.dist_path,
         )
 
-        self.remove_dir(path=self.dist_path)
+        if delete_distribution:
+            self.remove_dir(path=self.dist_path)
 
 
     def create_dir(self, source, dest, files):
@@ -307,5 +316,29 @@ class BuildProject(object):
         return terraform_outputs
 
 if __name__ == "__main__":
-    BuildProject().build_project()
+    '''
+    cli:
+    -k: keeps the distribution directiory after building it. The normal behaviour
+        is to remove the directory after it's contents is moved to AWS.
+
+    -d: deletes the distribution directory if it exists.
+
+    '''
+    if len(sys.argv) > 1:
+        args = sys.argv[1]
+
+    else:
+        args = None
+
+    if args == '-k':
+        BuildProject().build_project(delete_distribution=False)
+
+    elif args == '-d':
+        build_project_obj = BuildProject()
+        build_project_obj.remove_dir(
+            path=os.path.join(os.getcwd(), "build", "dist")
+        )
+
+    else:
+        BuildProject().build_project()
 
